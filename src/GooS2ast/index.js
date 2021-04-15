@@ -1,8 +1,9 @@
-// e6 转 ast
+// goos 转 ast
 
 const fs = require("fs");
+const path = require("path");
 
-const codePath = '/Users/zoupeng/exercise/GooS/files/Goos.js';
+const codePath = path.resolve(__dirname,'../../files/Goos.js');
 const codeStream = fs.readFileSync(codePath, 'utf-8')
 const codeString = codeStream.toString();
 
@@ -23,7 +24,7 @@ consoleToFile(ast).then((targetPath) => {
     
 
 // 输出结果到文件
-function consoleToFile(json, targetPath = '/Users/zoupeng/exercise/GooS/dist/GooS_ast.json') {
+function consoleToFile(json, targetPath = path.resolve(__dirname,'../../dist/GooS_ast.json')) {
     return new Promise((resolve, reject) => {
         const tabJSON = require('../tabJSON');
         const targetBuffer = tabJSON(JSON.stringify(json));

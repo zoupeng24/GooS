@@ -61,6 +61,7 @@
                 type: 'NumericLiteral',
                 value: token.value
             };
+            return init;
         }
         
         // 函数定义
@@ -74,9 +75,8 @@
             
             init.params = parseParams();
             init.body = parseExpression();
+            return init;
         }
- 
-        return init;
     };
  
     const parseParams = () => {
