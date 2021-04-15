@@ -1,0 +1,1 @@
+require('./src/GooS2ast/index');
